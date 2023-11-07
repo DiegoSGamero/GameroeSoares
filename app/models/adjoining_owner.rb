@@ -1,0 +1,2 @@
+class AdjoiningOwner < ApplicationRecord
+end

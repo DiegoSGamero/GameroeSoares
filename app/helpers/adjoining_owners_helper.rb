@@ -1,0 +1,2 @@
+module AdjoiningOwnersHelper
+end

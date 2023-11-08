@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_07_234506) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_08_002615) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_234506) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "adjoining_owners_properties", force: :cascade do |t|
+    t.bigint "adjoining_owner_id"
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["adjoining_owner_id"], name: "index_adjoining_owners_properties_on_adjoining_owner_id"
+    t.index ["property_id"], name: "index_adjoining_owners_properties_on_property_id"
   end
 
   create_table "contractors", force: :cascade do |t|
@@ -57,6 +66,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_07_234506) do
     t.string "limit_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "contractor_id", null: false
+    t.index ["contractor_id"], name: "index_properties_on_contractor_id"
   end
 
+  add_foreign_key "adjoining_owners_properties", "adjoining_owners"
+  add_foreign_key "adjoining_owners_properties", "properties"
+  add_foreign_key "properties", "contractors"
 end

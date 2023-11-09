@@ -1,15 +1,15 @@
 .navbar {
-  background-color: #C38A56;
+  background-color: #e9e9e9;
   height: 80px;
   font-size: large;
   p {
     margin: 0px;
-    color: #FFFAEA;
+    color: #2C4C30;
   }
 }
 
 .nav-item {
-  border-bottom: #FFFAEA 1px solid;
+  border-bottom: #2C4C30 1px solid;
 }
 
 .logotipo {
@@ -20,11 +20,11 @@
 .login-home {
   width: 60px;
   border-radius: 4px;
-  background-color: #FFFAEA !important;
-  box-shadow: 0px 0px 2px #a59465d5;
+  background-color: #51C874 !important;
+  box-shadow: 0px 0px 2px #5c5339d5;
   transition: 0.3s;
   p {
-    color: #9C6A3E;
+    color: #2C4C30;
   }
   &:hover {
     // background-color: #f8e5ad !important;
